@@ -1,12 +1,14 @@
 import mongoose from 'mongoose'
 import { Admin } from './Admin.js'
+import bcrypt from 'bcrypt'
 
 export const updateAdminService = async ({ body, id }) => {
-  const { first_name, last_name, username, password } = body
+  const { password } = body
+  const hashedPassword = bcrypt.hashSync(password, 10)
 
   const exsited = await Admin.findByIdAndUpdate(
     { id },
-    { first_name, last_name, username, password },
+    { ...body, password: hashedPassword },
     { new: true }
   )
 
