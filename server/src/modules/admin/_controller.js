@@ -1,6 +1,7 @@
 import { listAdminsServices } from './list-admin.js'
 import { addAdminService } from './add-admin.js'
 import { updateAdminService } from './update-admin.js'
+import { removeAdminService } from './remove-admin.js'
 
 export const listAdmin = async (req, res, next) => {
   try {
@@ -25,7 +26,17 @@ export const updateAdmin = async (req, res, next) => {
   try {
     const result = await updateAdminService({ body: req.body, id: req.params })
 
-    res.status(201).json({ data: result })
+    res.status(200).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
+
+export const removeAdmin = async (req, res, next) => {
+  try {
+    const result = await removeAdminService({ params: req.params })
+
+    res.status(200).json({ data: result })
   } catch (error) {
     next(error)
   }
