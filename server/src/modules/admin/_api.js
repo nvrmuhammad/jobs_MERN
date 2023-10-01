@@ -5,5 +5,6 @@ const router = Router()
 
 router.get('/admins', listAdmin)
 router.post('/admins', addAdmin)
+router.put('/admins/:id', )
 
 export default router

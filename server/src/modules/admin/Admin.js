@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const AdminSchema = mongoose.Schema({
+const AdminSchema = new mongoose.Schema({
   first_name: {
     type: mongoose.SchemaTypes.String,
     required: true,
