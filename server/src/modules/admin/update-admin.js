@@ -4,17 +4,13 @@ import bcrypt from 'bcrypt'
 
 export const updateAdminService = async ({ body, id }) => {
   const { password } = body
+
   const hashedPassword = bcrypt.hashSync(password, 10)
 
-  const exsited = await Admin.findByIdAndUpdate(
-    { id },
+  const updatedAdmin = await Admin.findByIdAndUpdate(
+    { _id: id.id },
     { ...body, password: hashedPassword },
     { new: true }
   )
-
-  if (exsited) {
-    return 'This is admin already existed'
-  }
-  const newAdmin = await Admin.create(body)
-  return newAdmin
+  return updatedAdmin
 }
