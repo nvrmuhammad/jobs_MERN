@@ -1,0 +1,79 @@
+Jobs
+
+1) Admins 
+2) Users 
+3) Company
+   1) company_category
+4) Job 
+   1) job-category
+5) job_request
+
+
+
+admins {
+	id
+	first_name
+	last_name
+	username
+	password
+}
+
+users {
+	id
+	first_name
+	last_name
+	username
+	password
+	resume
+	age
+	portfolio
+}
+
+company_category {
+	id
+	name
+}
+
+company {
+	id
+	name
+	recruiter
+	category_id
+	workers
+	info
+}
+
+
+job_category {
+	id
+	name
+}
+
+job {
+	id
+	name
+	salary
+	requirements
+	company_id
+	created_at
+	category_id
+	applicants
+}
+
+job_request {
+	id
+	job_id
+	user_id
+	company_id
+	is_allow
+}
+
+
+	
+	
+
+
+
+
+
+	
