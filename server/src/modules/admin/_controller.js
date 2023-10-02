@@ -16,7 +16,10 @@ export const listAdmin = async (req, res, next) => {
 
 export const addAdmin = async (req, res, next) => {
   try {
-    const result = await addAdminService({ body: req.body })
+    const result = await addAdminService({
+      body: req.body,
+      token: req.headers['authorization'],
+    })
 
     res.status(201).json({ data: result })
   } catch (error) {
