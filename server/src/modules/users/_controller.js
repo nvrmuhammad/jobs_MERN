@@ -1,18 +1,18 @@
 import { addUsersService } from './add-users.js'
 import { listUsersService } from './list-users.js'
 
-export const listUsers = (req, res, next) => {
+export const listUsers = async (req, res, next) => {
   try {
-    const result = listUsersService()
+    const result = await listUsersService()
 
     res.status(200).json({ data: result })
   } catch (error) {
     next(error)
   }
 }
-export const addUsers = (req, res, next) => {
+export const addUsers = async (req, res, next) => {
   try {
-    const result = addUsersService({ body: req.body })
+    const result = await addUsersService({ body: req.body })
 
     res.status(201).json({ data: result })
   } catch (error) {

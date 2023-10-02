@@ -1,4 +1,5 @@
 import { Users } from './Users.js'
+import bcrypt from 'bcrypt'
 
 export const addUsersService = async ({ body }) => {
   const { username, password } = body
