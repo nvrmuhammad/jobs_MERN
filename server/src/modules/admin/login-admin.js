@@ -16,7 +16,7 @@ export const loginAdminService = async ({ body }) => {
   const verifyPass = bcrypt.compareSync(password, admin.password)
 
   if (!verifyPass) {
-    return 'Passord inccorrect'
+    return 'Password inccorrect'
   }
 
   const token = jwt.sign(
