@@ -3,10 +3,20 @@ import { addAdminService } from './add-admin.js'
 import { updateAdminService } from './update-admin.js'
 import { removeAdminService } from './remove-admin.js'
 import { loginAdminService } from './login-admin.js'
+import { showAdminsServices } from './show-admin.js'
 
 export const listAdmin = async (req, res, next) => {
   try {
     const result = await listAdminsServices()
+
+    res.status(200).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
+export const showAdmin = async (req, res, next) => {
+  try {
+    const result = await showAdminsServices({ params: req.params })
 
     res.status(200).json({ data: result })
   } catch (error) {

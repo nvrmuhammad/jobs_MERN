@@ -4,6 +4,7 @@ import {
   listAdmin,
   loginAdmin,
   removeAdmin,
+  showAdmin,
   updateAdmin,
 } from './_controller.js'
 import { verify } from '../../middlewares/tokenVerify.js'
@@ -11,6 +12,7 @@ import { verify } from '../../middlewares/tokenVerify.js'
 const router = Router()
 
 router.get('/admins', listAdmin)
+router.get('/admins/:id', showAdmin)
 router.post('/admins', verify, addAdmin)
 router.put('/admins/:id', updateAdmin)
 router.delete('/admins/:id', removeAdmin)
