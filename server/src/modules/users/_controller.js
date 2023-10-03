@@ -1,5 +1,6 @@
 import { addUsersService } from './add-users.js'
 import { listUsersService } from './list-users.js'
+import { removeUserService } from './remove-user.js'
 import { showUsersService } from './show-user.js'
 import { updateUserService } from './update-users.js'
 
@@ -36,6 +37,15 @@ export const updateUsers = async (req, res, next) => {
       body: req.body,
       params: req.params,
     })
+
+    res.status(200).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
+export const removeUser = async (req, res, next) => {
+  try {
+    const result = await removeUserService({ params: req.params })
 
     res.status(200).json({ data: result })
   } catch (error) {
