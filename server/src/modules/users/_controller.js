@@ -1,6 +1,7 @@
 import { addUsersService } from './add-users.js'
 import { listUsersService } from './list-users.js'
 import { showUsersService } from './show-user.js'
+import { updateUserService } from './update-users.js'
 
 export const listUsers = async (req, res, next) => {
   try {
@@ -25,6 +26,18 @@ export const addUsers = async (req, res, next) => {
     const result = await addUsersService({ body: req.body })
 
     res.status(201).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
+export const updateUsers = async (req, res, next) => {
+  try {
+    const result = await updateUserService({
+      body: req.body,
+      params: req.params,
+    })
+
+    res.status(200).json({ data: result })
   } catch (error) {
     next(error)
   }
