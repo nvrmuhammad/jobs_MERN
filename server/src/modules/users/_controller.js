@@ -36,7 +36,7 @@ export const updateUsers = async (req, res, next) => {
   try {
     const result = await updateUserService({
       body: req.body,
-      params: req.params,
+      user: req.user,
     })
 
     res.status(200).json({ data: result })
