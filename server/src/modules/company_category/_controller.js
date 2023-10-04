@@ -11,3 +11,12 @@ export const cListCategories = async (req, res, next) => {
     next(error)
   }
 }
+export const cAddCategory = async (req, res, next) => {
+  try {
+    const result = await addCategoryService({ body: req.body, user: req.user })
+
+    res.status(201).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
