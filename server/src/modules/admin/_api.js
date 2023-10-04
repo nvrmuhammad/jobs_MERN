@@ -7,7 +7,7 @@ import {
   showAdmin,
   updateAdmin,
 } from './_controller.js'
-import { verify } from '../../middlewares/tokenVerify.js'
+import { verify } from '../../middlewares/isLoggedIn.js'
 
 const router = Router()
 
