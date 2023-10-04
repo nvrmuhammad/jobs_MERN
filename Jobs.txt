@@ -31,13 +31,13 @@ users {
 
 company_category {
 	id
-	name
+	name  [fullstack , flutter , ios  , php , Back-end , Front-end , SMM , graphc design]
 }
 
 company {
 	id
 	name
-	recruiter
+	recruiter [recruiter name]
 	category_id
 	workers
 	info
