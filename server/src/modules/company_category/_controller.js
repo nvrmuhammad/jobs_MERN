@@ -20,3 +20,15 @@ export const cAddCategory = async (req, res, next) => {
     next(error)
   }
 }
+export const cRemoveCategory = async (req, res, next) => {
+  try {
+    const result = await removeCategoryService({
+      params: req.params,
+      user: req.user,
+    })
+
+    res.status(200).json({ data: result, msg: 'Successfully deleted' })
+  } catch (error) {
+    next(error)
+  }
+}
