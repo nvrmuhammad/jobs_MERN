@@ -7,14 +7,14 @@ import {
   showUsers,
   updateUsers,
 } from './_controller.js'
-import { updateUserService } from './update-users.js'
+import { verify } from '../../middlewares/isLoggedIn.js'
 
 const router = Router()
 
 router.get('/users', listUsers)
 router.post('/users', addUsers)
 router.get('/users/:id', showUsers)
-router.put('/users/:id', updateUsers)
+router.put('/users', verify, updateUsers)
 router.post('/userslogin', loginUsers) // Login
 router.delete('/users/:id', removeUser)
 
