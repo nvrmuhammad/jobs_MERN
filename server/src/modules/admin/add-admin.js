@@ -2,21 +2,20 @@ import { Admin } from './Admin.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
-export const addAdminService = async ({ body, token }) => {
+export const addAdminService = async ({ body, user }) => {
   const { username, password } = body
-  const tokenVerify = jwt.verify(token, process.env.SECRET_KEY)
-
-  if (!tokenVerify.role == 'admin') {
-    return 'You are not an admin'
+  const { role } = user
+  if (role !== 'admin') {
+    return { error: 'You are not admin' }
   }
-
-  const hashedPassword = bcrypt.hashSync(password, 10)
 
   const exsited = await Admin.findOne({ username: username })
 
   if (exsited) {
-    return 'This is admin already existed'
+    return { error: 'This is admin already existed' }
   }
+
+  const hashedPassword = bcrypt.hashSync(password, 10)
   const newAdmin = await Admin.create({ ...body, password: hashedPassword })
   return newAdmin
 }
