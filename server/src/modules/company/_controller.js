@@ -29,3 +29,16 @@ export const loginCompany = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
+export const updateCompany = async (req, res, next) => {
+  try {
+    const result = await updateCompanyService({
+      user: req.user,
+      body: req.body,
+      file: req.file,
+    })
+
+    res.status(200).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
