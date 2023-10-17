@@ -21,3 +21,11 @@ export const registryCompany = async (req, res, next) => {
     next(error)
   }
 }
+export const loginCompany = async (req, res, next) => {
+  try {
+    const result = await loginCompanyService({ user: req.user, body: req.body })
+
+    res.status(200).json({ token: result })
+  } catch (error) {
+    next(error)
+  }
