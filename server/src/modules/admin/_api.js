@@ -11,11 +11,11 @@ import { verify } from '../../middlewares/isLoggedIn.js'
 
 const router = Router()
 
-router.get('/admins', listAdmin)
-router.get('/admins/:id', showAdmin)
+router.get('/admins', verify, listAdmin)
+router.get('/admins/:id', verify, showAdmin)
 router.post('/admins', verify, addAdmin)
-router.put('/admins/:id', updateAdmin)
-router.delete('/admins/:id', removeAdmin)
+router.put('/admins', verify, updateAdmin)
+router.delete('/admins', verify, removeAdmin)
 router.post('/adminLogin', loginAdmin)
 
 export default router
