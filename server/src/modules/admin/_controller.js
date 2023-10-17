@@ -7,7 +7,7 @@ import { showAdminsServices } from './show-admin.js'
 
 export const listAdmin = async (req, res, next) => {
   try {
-    const result = await listAdminsServices()
+    const result = await listAdminsServices({ user: req.user })
 
     res.status(200).json({ data: result })
   } catch (error) {
@@ -16,7 +16,10 @@ export const listAdmin = async (req, res, next) => {
 }
 export const showAdmin = async (req, res, next) => {
   try {
-    const result = await showAdminsServices({ params: req.params })
+    const result = await showAdminsServices({
+      params: req.params,
+      user: req.user,
+    })
 
     res.status(200).json({ data: result })
   } catch (error) {
@@ -28,7 +31,7 @@ export const addAdmin = async (req, res, next) => {
   try {
     const result = await addAdminService({
       body: req.body,
-      token: req.headers['authorization'],
+      user: req.user,
     })
 
     res.status(201).json({ data: result })
@@ -38,7 +41,10 @@ export const addAdmin = async (req, res, next) => {
 }
 export const updateAdmin = async (req, res, next) => {
   try {
-    const result = await updateAdminService({ body: req.body, id: req.params })
+    const result = await updateAdminService({
+      body: req.body,
+      user: req.user,
+    })
 
     res.status(200).json({ data: result })
   } catch (error) {
@@ -48,7 +54,7 @@ export const updateAdmin = async (req, res, next) => {
 
 export const removeAdmin = async (req, res, next) => {
   try {
-    const result = await removeAdminService({ params: req.params })
+    const result = await removeAdminService({ user: req.user })
 
     res.status(200).json({ data: result })
   } catch (error) {
