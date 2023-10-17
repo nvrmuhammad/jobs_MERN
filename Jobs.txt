@@ -24,7 +24,8 @@ users {
 	last_name
 	username
 	password
-	resume
+	avatar : file
+	resume : file
 	age
 	portfolio
 }
@@ -37,16 +38,20 @@ company_category {
 company {
 	id
 	name
-	recruiter [recruiter name]
-	category_id
-	workers
+	recruiter : fullName
+	workers []
 	info
+	category_id
+	is_allow : false - admin ruxsatiz bilan true buladi
+	login
+	password
 }
+
 
 
 job_category {
 	id
-	name
+	name 
 }
 
 job {
@@ -55,17 +60,19 @@ job {
 	salary
 	requirements
 	company_id
-	created_at
+	created_at 
 	category_id
 	applicants
-}
+	is_active
+} 
 
 job_request {
 	id
 	job_id
 	user_id
 	company_id
-	is_allow
+	is_allow : false - company is ruxsat bersagna
+	
 }
 
 
