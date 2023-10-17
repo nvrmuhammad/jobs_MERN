@@ -6,7 +6,7 @@ export const verify = (req, res, next) => {
 
     if (!token) {
       return res.status(401).json({
-        error: 'You are not registered or you have not access',
+        error: 'Token not given or you have not access ',
         data: null,
       })
     }
@@ -16,6 +16,6 @@ export const verify = (req, res, next) => {
 
     next()
   } catch (error) {
-    res.status(400).json({ error: 'You have not access to login', data: null })
+    res.status(401).json({ error: error.message, data: null })
   }
 }
