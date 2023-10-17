@@ -1,7 +1,13 @@
 import { Admin } from './Admin.js'
 
-export const showAdminsServices = async ({ params }) => {
+export const showAdminsServices = async ({ user, params }) => {
+  const { role } = user
   const { id } = params
+
+  if (role !== 'admin') {
+    return { error: 'you have not access' }
+  }
+
   const list = await Admin.findOne({ _id: id })
 
   if (!list) {
