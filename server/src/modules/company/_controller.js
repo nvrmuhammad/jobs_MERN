@@ -1,3 +1,9 @@
+import { listCompaniesServices } from './list-companies.js'
+import { loginCompanyService } from './login-company.js'
+import { registryCompanyService } from './registry.js'
+import { removeCompanyService } from './remove-company.js'
+import { updateCompanyService } from './update-company.js'
+
 export const listCompanies = async (req, res, next) => {
   try {
     const result = await listCompaniesServices({
@@ -29,6 +35,7 @@ export const loginCompany = async (req, res, next) => {
   } catch (error) {
     next(error)
   }
+}
 export const updateCompany = async (req, res, next) => {
   try {
     const result = await updateCompanyService({
