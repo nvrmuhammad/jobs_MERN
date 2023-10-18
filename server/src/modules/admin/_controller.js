@@ -1,9 +1,9 @@
-import { listAdminsServices } from './list-admin.js'
-import { addAdminService } from './add-admin.js'
-import { updateAdminService } from './update-admin.js'
-import { removeAdminService } from './remove-admin.js'
-import { loginAdminService } from './login-admin.js'
-import { showAdminsServices } from './show-admin.js'
+import { listAdminsServices } from './Service/list-admin.js'
+import { addAdminService } from './Service/add-admin.js'
+import { updateAdminService } from './Service/update-admin.js'
+import { removeAdminService } from './Service/remove-admin.js'
+import { loginAdminService } from './Service/login-admin.js'
+import { showAdminsServices } from './Service/show-admin.js'
 
 export const listAdmin = async (req, res, next) => {
   try {
