@@ -1,4 +1,4 @@
-import { Company } from './Company.js'
+import { Company } from '../Schema/Company.js'
 
 export const removeCompanyService = async ({ params, user }) => {
   const { role } = user
