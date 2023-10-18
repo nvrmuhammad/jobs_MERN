@@ -1,4 +1,4 @@
-import { Company } from '../company/Company.js'
+import { Company } from '../Schema/Company.js'
 import bcrypt from 'bcrypt'
 
 export const updateCompanyService = async ({ body, user, file }) => {
