@@ -1,4 +1,4 @@
-import { CompanyCategory } from './Category.js'
+import { CompanyCategory } from '../Schema/Category.js'
 
 export const addCategoryService = async ({ body, user }) => {
   const { name } = body
@@ -12,5 +12,5 @@ export const addCategoryService = async ({ body, user }) => {
     return 'This category has been added'
   }
   const newCategory = await CompanyCategory.create({ name })
-  return newCategory
+  return { newCategory, msg: 'Successfully created' }
 }
