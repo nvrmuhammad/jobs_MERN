@@ -1,6 +1,7 @@
-import { addCategoryService } from './add-categories.js'
-import { cCategoriesService } from './list-c-categories.js'
-import { removeCategoryService } from './remove-c-cateogries.js'
+import { addCategoryService } from './Service/add-categories.js'
+import { cCategoriesService } from './Service/list-c-categories.js'
+import { removeCategoryService } from './Service/remove-c-cateogries.js'
+import { updateCategoryService } from './Service/update-c-categories.js'
 
 export const cListCategories = async (req, res, next) => {
   try {
@@ -27,7 +28,20 @@ export const cRemoveCategory = async (req, res, next) => {
       user: req.user,
     })
 
-    res.status(200).json({ data: result, msg: 'Successfully deleted' })
+    res.status(200).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
+export const cUpdateCategory = async (req, res, next) => {
+  try {
+    const result = await updateCategoryService({
+      params: req.params,
+      user: req.user,
+      body: req.body,
+    })
+
+    res.status(200).json({ data: result })
   } catch (error) {
     next(error)
   }
