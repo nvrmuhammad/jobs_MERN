@@ -1,4 +1,4 @@
-import { Admin } from './Admin.js'
+import { Admin } from '../Schema/Admin.js'
 
 export const removeAdminService = async ({ user }) => {
   const { id, role } = user
