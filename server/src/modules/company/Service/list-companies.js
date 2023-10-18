@@ -1,4 +1,4 @@
-import { Company } from './Company.js'
+import { Company } from '../Schema/Company.js'
 
 export const listCompaniesServices = async ({ user }) => {
   const { role } = user
