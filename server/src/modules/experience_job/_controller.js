@@ -13,6 +13,15 @@ export const listExperience = async (req, res, next) => {
     next(error)
   }
 }
+export const showExperience = async (req, res, next) => {
+  try {
+    const result = await ShowExperienceService({ params: req.params })
+
+    res.status(200).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
 export const addExperience = async (req, res, next) => {
   try {
     const result = await addExperienceService({
