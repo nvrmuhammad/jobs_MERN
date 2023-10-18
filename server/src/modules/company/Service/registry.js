@@ -1,11 +1,11 @@
-import { Company } from './Company.js'
+import { Company } from '../Schema/Company.js'
 import bcrypt from 'bcrypt'
 
 export const registryCompanyService = async ({ body, file }) => {
   const { email, password } = body
   const { filename } = file
 
-  const linkAvatar = `http://localhost:2000/${filename}`
+  const linkAvatar = `/${filename}`
 
   const exsited = await Company.findOne({ email: email })
   if (exsited) {
