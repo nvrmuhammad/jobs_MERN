@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import { Company } from './Company.js'
+import { Company } from '../Schema/Company.js'
 
 export const loginCompanyService = async ({ body, user }) => {
   const { email, password } = body
