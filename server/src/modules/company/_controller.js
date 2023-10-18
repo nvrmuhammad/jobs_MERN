@@ -1,8 +1,8 @@
-import { listCompaniesServices } from './list-companies.js'
-import { loginCompanyService } from './login-company.js'
-import { registryCompanyService } from './registry.js'
-import { removeCompanyService } from './remove-company.js'
-import { updateCompanyService } from './update-company.js'
+import { listCompaniesServices } from './Service/list-companies.js'
+import { loginCompanyService } from './Service/login-company.js'
+import { registryCompanyService } from './Service/registry.js'
+import { removeCompanyService } from './Service/remove-company.js'
+import { updateCompanyService } from './Service/update-company.js'
 
 export const listCompanies = async (req, res, next) => {
   try {
