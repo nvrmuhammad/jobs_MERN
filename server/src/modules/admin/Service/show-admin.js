@@ -1,4 +1,4 @@
-import { Admin } from './Admin.js'
+import { Admin } from '../Schema/Admin.js'
 
 export const showAdminsServices = async ({ user, params }) => {
   const { role } = user
