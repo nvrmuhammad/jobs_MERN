@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { Admin } from './Admin.js'
+import { Admin } from '../Schema/Admin.js'
 import bcrypt from 'bcrypt'
 
 export const updateAdminService = async ({ body, user }) => {
