@@ -16,3 +16,12 @@ export const showJob = async (req, res, next) => {
     next(error)
   }
 }
+export const addJob = async (req, res, next) => {
+  try {
+    const result = await addJobService({ body: req.body, user: req.user })
+
+    res.status(201).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
