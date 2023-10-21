@@ -1,7 +1,9 @@
+import { acceptCompanyWorkerService } from './Service/accepting.js'
 import { listCompaniesServices } from './Service/list-companies.js'
 import { loginCompanyService } from './Service/login-company.js'
 import { registryCompanyService } from './Service/registry.js'
 import { removeCompanyService } from './Service/remove-company.js'
+import { showCompaniesServices } from './Service/show-company.js'
 import { updateCompanyService } from './Service/update-company.js'
 
 export const listCompanies = async (req, res, next) => {
@@ -42,6 +44,18 @@ export const updateCompany = async (req, res, next) => {
       user: req.user,
       body: req.body,
       file: req.file,
+    })
+
+    res.status(200).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
+export const accessCompanyWorker = async (req, res, next) => {
+  try {
+    const result = await acceptCompanyWorkerService({
+      user: req.user,
+      params: req.params,
     })
 
     res.status(200).json({ data: result })
