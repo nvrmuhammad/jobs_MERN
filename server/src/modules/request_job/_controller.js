@@ -1,3 +1,6 @@
+import { addRequestService } from './Service/add-request.js'
+import { listRequestServices } from './Service/list-request.js'
+
 export const listRequest = async (req, res, next) => {
   try {
     const result = await listRequestServices({ user: req.user })
