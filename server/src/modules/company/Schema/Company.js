@@ -27,7 +27,6 @@ const CompanySchema = new mongoose.Schema({
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'users',
     },
-    { default: null },
   ],
   info: {
     type: mongoose.SchemaTypes.String,

@@ -32,8 +32,7 @@ export const loginCompanyService = async ({ body, user }) => {
 
   const token = jwt.sign(
     { id: company._id, role: 'company' },
-    process.env.SECRET_KEY,
-    { expiresIn: '1d' }
+    process.env.SECRET_KEY
   )
 
   return token
