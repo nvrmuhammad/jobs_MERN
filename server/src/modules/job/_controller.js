@@ -51,3 +51,15 @@ export const accessJob = async (req, res, next) => {
     next(error)
   }
 }
+export const removeJob = async (req, res, next) => {
+  try {
+    const result = await removeJobService({
+      user: req.user,
+      params: req.params,
+    })
+
+    res.status(200).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
