@@ -62,3 +62,14 @@ export const removeCompanies = async (req, res, next) => {
     next(error)
   }
 }
+export const showCompanies = async (req, res, next) => {
+  try {
+    const result = await showCompaniesServices({
+      params: req.params,
+    })
+
+    res.status(200).json({ data: result })
+  } catch (error) {
+    next(error)
+  }
+}
