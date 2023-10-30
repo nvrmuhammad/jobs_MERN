@@ -15,8 +15,21 @@ export const listJobServices = async ({ user }) => {
     ])
     return list
   }
+  if (role == 'company') {
+    const listVacancy = await Job.find({ company_id: id }).populate([
+      {
+        path: 'company_id',
+        select: 'name ',
+      },
+      {
+        path: 'experience_id',
+        select: 'name',
+      },
+    ])
+    return listVacancy
+  }
 
-  const listVacancy = await Job.find({ company_id: id }).populate([
+  const listVacancies = await Job.find().populate([
     {
       path: 'company_id',
       select: 'name ',
@@ -26,5 +39,6 @@ export const listJobServices = async ({ user }) => {
       select: 'name',
     },
   ])
-  return listVacancy
+
+  return listVacancies
 }
