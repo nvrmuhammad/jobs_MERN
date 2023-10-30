@@ -1,3 +1,4 @@
+import { validateCategory } from '../../utils/joi.js'
 import { addCategoryService } from './Service/add-categories.js'
 import { cCategoriesService } from './Service/list-c-categories.js'
 import { removeCategoryService } from './Service/remove-c-cateogries.js'
@@ -13,6 +14,11 @@ export const cListCategories = async (req, res, next) => {
   }
 }
 export const cAddCategory = async (req, res, next) => {
+  const { error } = validateCategory.validate(req.body)
+  if (error) {
+    return res.status(400).json({ error: error.message })
+  }
+
   try {
     const result = await addCategoryService({ body: req.body, user: req.user })
 
