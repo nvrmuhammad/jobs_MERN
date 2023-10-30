@@ -23,7 +23,7 @@ export const loginCompanyService = async ({ body, user }) => {
     return { error: 'Password inccorrect' }
   }
 
-  if (company.is_allow) {
+  if (!company.is_allow) {
     return {
       error:
         'Company is not allowed by adminstrators , please wait for some time',
