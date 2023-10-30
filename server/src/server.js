@@ -1,3 +1,4 @@
+import cors from 'cors'
 import express from 'express'
 import 'dotenv/config'
 import db from './config/database.js'
@@ -10,10 +11,12 @@ import CompanyRouter from './modules/company/_api.js'
 import JobRouter from './modules/job/_api.js'
 import ExperienceRouter from './modules/experience_job/_api.js'
 import RequestRouter from './modules/request_job/_api.js'
+
 function server() {
   try {
     const app = express()
     app.use(express.json())
+    app.use(cors())
     app.use(AdminRouter)
     app.use(UsersRouter)
     app.use(CategoryRouter)

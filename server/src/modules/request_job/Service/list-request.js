@@ -25,5 +25,8 @@ export const listRequestServices = async ({ user }) => {
     { path: 'user_id', select: 'username id' },
     { path: 'company_id', select: 'name id' },
   ])
+
+  console.log(listRequest)
+
   return listRequest
 }

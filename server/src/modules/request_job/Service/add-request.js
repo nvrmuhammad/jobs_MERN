@@ -13,7 +13,9 @@ export const addRequestService = async ({ body, user }) => {
   const checking = await Users.findOne({ _id: id })
   if (!checking) {
     return { error: 'User is not defined' }
-  }
+  } 
+
+  
 
   const vacancy = await Job.findOne({ _id: job_id })
 
