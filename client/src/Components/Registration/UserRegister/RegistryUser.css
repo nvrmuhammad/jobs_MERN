@@ -1,0 +1,115 @@
+#Registry {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main__text {
+  width: 50%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  font-size: 70px;
+  border-top: 4px solid #000000;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.register_text {
+  margin: 10px;
+  font-size: 35px;
+  font-weight: 600;
+  color: #333;
+}
+
+.register_inputs {
+  width: 40%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #e4edf5;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.register_input {
+  width: 90%;
+  height: 50px;
+  border-radius: 3px;
+  border: none;
+  padding: 0 0 0 10px;
+  outline: none;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 5px;
+}
+
+.register_input::placeholder {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.thunder_gif {
+  width: 24px;
+  height: 24px;
+  margin: 5px;
+}
+
+#register_btn {
+  width: 40%;
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  background-color: #0f172a;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+#back__btn {
+  border: none;
+  border-radius: 3px;
+  background-color: #0f172a;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px 5px;
+}
+
+.input-file {
+  position: relative;
+  display: inline-block;
+}
+#sign_btn:active {
+  transform: scale(0.94);
+  opacity: 100%;
+}
+#sign_btn:hover {
+  opacity: 95%;
+}

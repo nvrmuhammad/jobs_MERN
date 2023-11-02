@@ -9,7 +9,7 @@ export const addUsersService = async ({ body, file }) => {
 
   const exsited = await Users.findOne({ username: username })
   if (exsited) {
-    return 'This is username already existed'
+    return { error: 'This is username already existed' }
   }
 
   const hashedPassword = bcrypt.hashSync(password, 10)
@@ -17,7 +17,7 @@ export const addUsersService = async ({ body, file }) => {
   const newUser = await Users.create({
     ...body,
     password: hashedPassword,
-    avatar: linkAvatar,
+    avatar: linkAvatar || '',
   })
 
   return newUser

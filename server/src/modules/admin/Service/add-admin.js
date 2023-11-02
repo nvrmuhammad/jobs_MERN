@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken'
 export const addAdminService = async ({ body, user }) => {
   const { username, password } = body
   const { role, id } = user
+
   if (role !== 'admin') {
     return { error: 'You are not admin' }
   }

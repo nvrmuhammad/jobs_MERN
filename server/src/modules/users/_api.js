@@ -5,6 +5,7 @@ import {
   listUsers,
   loginUsers,
   removeUser,
+  showUser,
   updateUsers,
 } from './_controller.js'
 import { verify } from '../../middlewares/isLoggedIn.js'
@@ -14,6 +15,7 @@ const router = Router()
 
 router.get('/users', verify, listUsers)
 router.get('/users/:id', listOneUser)
+router.get('/user/me', verify, showUser)
 router.post('/users', upload.single('avatar'), addUsers)
 router.post('/userslogin', loginUsers) // Login
 router.put('/users', upload.single('avatar'), verify, updateUsers)

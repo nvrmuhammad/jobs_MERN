@@ -1,3 +1,4 @@
+import { companySignup } from '../../utils/joi.js'
 import { acceptCompanyWorkerService } from './Service/accepting.js'
 import { allowCompanyService } from './Service/allowing-company.js'
 import { listCompaniesServices } from './Service/list-companies.js'
@@ -20,6 +21,10 @@ export const listCompanies = async (req, res, next) => {
 }
 export const registryCompany = async (req, res, next) => {
   try {
+    const { error } = companySignup.validate(req.body)
+    if (error) {
+      return res.status(400).json({ error: error.message })
+    }
     const result = await registryCompanyService({
       body: req.body,
       file: req.file,
@@ -34,7 +39,7 @@ export const loginCompany = async (req, res, next) => {
   try {
     const result = await loginCompanyService({ user: req.user, body: req.body })
 
-    res.status(200).json({ token: result })
+    res.status(200).json({ data: result })
   } catch (error) {
     next(error)
   }
@@ -92,7 +97,7 @@ export const removeCompanies = async (req, res, next) => {
 export const showCompanies = async (req, res, next) => {
   try {
     const result = await showCompaniesServices({
-      params: req.params,
+      user: req.user,
     })
 
     res.status(200).json({ data: result })

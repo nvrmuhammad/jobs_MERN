@@ -1,0 +1,56 @@
+#Request {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f3f4;
+}
+
+.requests {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.request {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.request p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px;
+}
+
+.data__req {  
+  font-weight: 400;
+  font-size: 15px;
+  text-decoration: underline rgb(38, 248, 38);
+}
+
+.req__icon {
+  background-color: #333;
+  padding: 8px;
+  font-size: 22px;
+  border-radius: 4px;
+  margin: 0 20px 0 0;
+}

@@ -1,0 +1,40 @@
+#Navbar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  z-index: 1;
+  position: fixed;
+}
+
+.nav__navigators {
+  min-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav__logo {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__logo img {
+  width: 70%;
+}
+
+.navigator__home__navber {
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+  opacity: 80%;
+  transition: 0.1s ease-in-out;
+}
+.navigator__home__navber:hover {
+  opacity: 100%;
+}

@@ -10,13 +10,13 @@ export const loginAdminService = async ({ body }) => {
   })
 
   if (!admin) {
-    return 'This user is not registered or not found'
+    return { error: 'This admin is not registered or not found' }
   }
 
   const verifyPass = bcrypt.compareSync(password, admin.password)
 
   if (!verifyPass) {
-    return 'Password inccorrect'
+    return { error: 'Password inccorrect' }
   }
 
   const token = jwt.sign(
@@ -24,5 +24,5 @@ export const loginAdminService = async ({ body }) => {
     process.env.SECRET_KEY
   )
 
-  return token
+  return { token }
 }

@@ -7,12 +7,12 @@ export const updateUserService = async ({ body, user, file }) => {
   const { filename } = file
   const { id } = user
 
-  const hashedPassword = bcrypt.hashSync(password, 10)
-  const linkAvatar = `http://localhost:2000/${filename}`
+  // const hashedPassword = bcrypt.hashSync(password, 10)
+  const linkAvatar = `${filename}`
 
   const updatedUser = await Users.findByIdAndUpdate(
     { _id: id },
-    { ...body, password: hashedPassword, avatar: linkAvatar },
+    { ...body, avatar: linkAvatar },
     { new: true }
   )
   return updatedUser

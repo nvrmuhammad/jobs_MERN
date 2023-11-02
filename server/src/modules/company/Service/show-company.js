@@ -1,7 +1,7 @@
 import { Company } from '../Schema/Company.js'
 
-export const showCompaniesServices = async ({ params }) => {
-  const show = await Company.findOne({ _id: params.id }).populate([
+export const showCompaniesServices = async ({ user }) => {
+  const show = await Company.findOne({ _id: user.id }).populate([
     {
       path: 'category_id',
       select: 'name _id',
