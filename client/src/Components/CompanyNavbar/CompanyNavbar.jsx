@@ -24,7 +24,7 @@ const CompanyNavbar = () => {
         </Link>
 
         <Link
-          onClick={() => localStorage.clear()}
+          onClick={() => localStorage.removeItem('company')}
           className='navigator__home__navber'
           to={'/home'}
         >

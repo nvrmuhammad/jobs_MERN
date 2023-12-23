@@ -40,7 +40,7 @@ const Navbar = () => {
           </>
         ) : (
           <Link
-            onClick={() => localStorage.clear()}
+            onClick={() => localStorage.removeItem('user')}
             className='navigator__home__navber'
             to={'/login'}
           >

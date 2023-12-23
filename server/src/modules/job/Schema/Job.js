@@ -33,7 +33,6 @@ const JobSchema = new mongoose.Schema(
       default: true,
     },
   },
-
   {
     timestamps: {
       createdAt: 'created_at',

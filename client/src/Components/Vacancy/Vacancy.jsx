@@ -62,6 +62,8 @@ const VacancyModel = ({ data }) => {
     request(id)
   }
 
+  console.log(data)
+
   return (
     <div className='vacancy__model'>
       <div className='info__vacancy'>
